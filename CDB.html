@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>CDB</title>
+<link rel="stylesheet" type="text/css" href="CDB.css" />
+</head>
+
+<body>
+  <form id="formComentario" method="post" action="">
+    <fieldset>
+      <legend>Por favor preencha as informações</legend>
+      <p>
+        <label for="cnome">Codigo de Barra*</label>
+        <input
+          type="text"
+          id="cnome"
+          name="nome"
+          required
+          minlength="13"
+          required
+          maxlength="13"
+        />
+      </p>
+    </fieldset>
+  </form>
+  <div>
+    <button type="button" class="botao" onclick="validar()">Enviar</button>
+  </div>
+
+  <script>
+    function validar() {
+      if (document.getElementById("cnome").value.length === 13) {
+        alert("Codigo de Barra Valído");
+      } else {
+        alert("Código de Barra Invalido");
+      }
+      mat1 = cnome.charAt(0) * 1 + cnome.charAt(1) * 3 + cnome.charAt(2) * 1 + cnome.charAt(3) * 3 + cnome.charAt(4) * 1 + cnome.charAt(5) * 3 + cnome.charAt(6) * 1 + cnome.charAt(7) * 3 + cnome.charAt(8) * 1 + cnome.charAt(9) * 3 + cnome.charAt(10) * 1 + cnome.charAt(11) * 3 + cnome.charAt(12) * 1 + cnome.charAt(13) * 3
+      mat2 = mat1 / 10 + 1
+      mat3 = mat2 * 10
+      res = mat1 - mat3
+      cnome = document.getElementById('cnome').value
+      codpais = cnome.charAt(0) + cnome.charAt(1) + cnome.charAt(2)
+     if (codpais == '789' || codpais == '790'){
+            alert("BRASIL") 
+} else if (codpais == '779'){
+            alert("ARGENTINA")
+}else if (codpais == '773'){
+            alert("URUGUAI")
+}else if (codpais == '780'){
+            alert("CHILE")
+}else if (codpais == '784'){
+            alert("PARAGUAI")
+    }else if (codpais == '786'){
+            alert("EQUADOR")
+      }else if (codpais == '770'){
+            alert("COLÔMBIA")
+    }else if (codpais == '743'){
+            alert("NICARÁGUA")
+     } else if (codpais == '600' || codpais == '601'){
+            alert("ÁFRICA DO SUL")
+     }
+  }
+  </script>
+  </fieldset>
+</form>
+</body>
+</html>
