@@ -22,6 +22,8 @@
           maxlength="13"
         />
       </p>
+      <div id="res"></div>
+      <span id="msg" style="display:none; color: #f33">Código de barras inválido</span>
     </fieldset>
   </form>
   <div>
@@ -32,13 +34,19 @@
     function validar() {
       if (document.getElementById("cnome").value.length === 13) {
         alert("Codigo de Barra Valído");
+        msg = document.getElementById('msg')
+        msg.style.display = 'none'
       } else {
         alert("Código de Barra Invalido");
+        msg.style.display = 'block'
       }
-      //mat1 = cnome.charAt(0) * 1 + cnome.charAt(1) * 3 + cnome.charAt(2) * 1 + cnome.charAt(3) * 3 + cnome.charAt(4) * 1 + cnome.charAt(5) * 3 + cnome.charAt(6) * 1 + cnome.charAt(7) * 3 + cnome.charAt(8) * 1 + cnome.charAt(9) * 3 + cnome.charAt(10) * 1 + cnome.charAt(11) * 3 + cnome.charAt(12) * 1
-      //mat2 = mat1 / 10 + 1
-      //mat3 = mat2 * 10
-      //res = mat1 - mat3
+      mat1 = cnome.charAt(0) * 1 + cnome.charAt(1) * 3 + cnome.charAt(2) * 1 + cnome.charAt(3) * 3 + cnome.charAt(4) * 1 + cnome.charAt(5) * 3 + cnome.charAt(6) * 1 + cnome.charAt(7) * 3 + cnome.charAt(8) * 1 + cnome.charAt(9) * 3 + cnome.charAt(10) * 1 + cnome.charAt(11) * 3 + cnome.charAt(12) * 1
+      mat2 = mat1 / 10 + 1
+      mat3 = mat2 * 10
+      res = mat1 - mat3
+      codigo = res
+      minhadiv = document.getElementById('res')
+      minhadiv.innerHTML = codigo
       cnome = document.getElementById('cnome').value
       codpais = cnome.charAt(0) + cnome.charAt(1) + cnome.charAt(2)
      if (codpais == '789' || codpais == '790'){
